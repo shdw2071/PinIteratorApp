@@ -1,4 +1,4 @@
-```kotlin
+kotlin
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -43,4 +43,3 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 }
-```
