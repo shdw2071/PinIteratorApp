@@ -1,4 +1,4 @@
-```kotlin
+kotlin
 pluginManagement {
     repositories {
         google()
@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "PinIteratorApp"
 include(":app")
-```
