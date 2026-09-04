@@ -1,4 +1,4 @@
-```kotlin
+kotlin
 package com.example.piniterator
 
 import android.content.Context
@@ -30,4 +30,3 @@ class PinStorage(context: Context) {
         prefs.edit().clear().apply()
     }
 }
-```
