@@ -1,4 +1,3 @@
-kotlin
 package com.example.piniterator
 
 import android.content.Context
