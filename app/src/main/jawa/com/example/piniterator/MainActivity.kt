@@ -1,4 +1,4 @@
-```kotlin
+kotlin
 package com.example.piniterator
 
 import android.os.Bundle
@@ -50,4 +50,3 @@ fun PinScreen(viewModel: MainViewModel = viewModel()) {
         }
     }
 }
-```
