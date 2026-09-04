@@ -1,4 +1,4 @@
-```kotlin
+kotlin
 package com.example.piniterator
 
 import android.app.Application
@@ -37,4 +37,3 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _finished.value = false
     }
 }
-```
