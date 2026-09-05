@@ -25,16 +25,28 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PinScreen(viewModel: MainViewModel = viewModel()) {
-    val pin by viewModel.pin.observeAsState("Натисніть Далі")
-    val progress by viewModel.progress.observeAsState("0/10000")
-    val finished by viewModel.finished.observeAsState(false)
+    var pin by remember { mutableStateOf("Натисніть Далі") }
+    var progress by remember { mutableStateOf("0/10000") }
+    var finished by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        viewModel.pin.observeForever { value ->
+            pin = value ?: "Натисніть Далі"
+        }
+        viewModel.progress.observeForever { value ->
+            progress = value
+        }
+        viewModel.finished.observeForever { value ->
+            finished = value
+        }
+    }
 
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = pin ?: "Натисніть Далі", fontSize = 48.sp)
+        Text(text = pin, fontSize = 48.sp)
         Spacer(modifier = Modifier.height(16.dp))
         Text(text = "Прогрес: $progress")
         Spacer(modifier = Modifier.height(32.dp))
